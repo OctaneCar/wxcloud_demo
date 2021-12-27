@@ -1,0 +1,29 @@
+<view class="Main">
+  <view>
+    <swiper autoplay="autoplay" interval="3000" indicator-dots="true" indicator-color="#f4C903" indicator-active-color="#fff">
+      <swiper-item wx:for="{{ImageList}}">
+        <image src="{{item.Images}}" style="width:100%"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view>
+    <van-search value="{{ value }}" input-align="center" shape="round" background="#f4C903" placeholder="搜索菜品" bind:search="onSearch" bind:change="onChage" />
+  </view>
+  <van-toast id="van-toast" />
+
+<view style="display: flex;justify-content: center;"><image src="../../image/images/commands.png" mode="aspectFit" style="height: 300rpx;"></image></view>
+
+  <view class="FoodList-Main" wx:for="{{ FoodList }}" bindtap="tapFoodList" data-item="{{item._id}}">
+    <view class="FoodList-FoodImg">
+      <image src="{{item.FoodImg[0]}}" />
+    </view>
+    <view class="FoodList-FoodText">
+      <view><text style="font-size: large;font-weight: bold;">{{item.FoodName}}</text></view>
+
+    </view>
+    <view class="FoodList-Footer">
+      <view><text style="color: gray;font-size: small;">销量 15</text></view>
+      <view><text style="color: red;font-size: large;">￥{{item.FoodPrice}}/份</text></view>
+    </view>
+  </view>
+</view>

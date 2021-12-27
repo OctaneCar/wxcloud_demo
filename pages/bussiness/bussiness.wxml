@@ -1,0 +1,13 @@
+<!--pages/bussiness/bussiness.wxml-->
+<view style="min-height: 100vh; background: #f4C903;display: flex; justify-content: center;align-items: center;">
+    <view style="width: 50vh;height: 500rpx;background: #fff;border-radius: 10%;">
+        <view style="display: flex;flex-direction: column;align-items: center;margin-top: 130rpx;">
+            <van-field model:value="{{ username }}" label="用户名" placeholder="请输入用户名" input-align="left" left-icon="friends" />
+            <van-field model:value="{{ password }}" type="password" label="密码" placeholder="请输入密码" input-align="left" left-icon="label" />
+        </view>
+        <view style="margin-top: 40rpx;">
+            <button style="background: #f4C903;width: 230rpx;border-radius: 30rpx;" bindtap="login">登录</button>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+</view>

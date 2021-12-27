@@ -1,0 +1,16 @@
+/* pages/detail/detail.wxss */
+.Main{
+    background: #f0f2f5;
+    min-height: 100vh;
+}
+.detail{
+    color: gray;
+    font-weight: 200;
+    padding-top: 30rpx;
+}
+.detaila{
+    padding-top: 30rpx;
+}
+.btncls{
+    border-radius: 20rpx;
+}

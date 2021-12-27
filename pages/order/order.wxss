@@ -1,0 +1,5 @@
+/* pages/order/order.wxss */
+.textInfo{
+    padding: 6rpx 0;
+    font-size: normal;
+}

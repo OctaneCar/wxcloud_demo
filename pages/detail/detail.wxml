@@ -1,0 +1,62 @@
+<!--pages/detail/detail.wxml-->
+<view class="Main">
+    <view style="background: #fff;">
+        <view>
+            <image src="{{FoodList.FoodImg}}" mode="scaleToFill" style="width: 100%;height: 240px;"></image>
+        </view>
+        <view style="margin: 30rpx;">
+            <view style="display: flex;flex-direction: column;">
+                <text style="font-size: x-large;font-weight: bold;">{{FoodList.FoodName}}</text>
+                <text style="font-size: small;color: gray;">月销：15</text>
+            </view>
+            <view style="margin: 20rpx 0;">
+                <text style="color: red;font-size: larger;font-weight: bold;">￥{{FoodList.FoodPrice}}</text>
+            </view>
+            <view style="padding-bottom: 20rpx;">
+                <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickButton" />
+            </view>
+        </view>
+    </view>
+    <view style="margin-top: 10rpx;background: #fff;position: relative;">
+        <view style="display: flex;flex-direction: column;margin:30rpx">
+            <txet class="detail">掌柜描述：</txet>
+            <txet class="detail">份量：</txet>
+            <txet class="detail">口味：</txet>
+            <txet class="detail">主料：</txet>
+            <txet class="detail">辅料：</txet>
+            <txet class="detail">价格说明：</txet>
+        </view>
+        <view style="display: flex;flex-direction: column;margin:30rpx;position: absolute;left: 200rpx;top: -30rpx;">
+            <txet class="detaila">牛得很</txet>
+            <txet class="detaila">1人份</txet>
+            <txet class="detaila">香辣</txet>
+            <text class="detaila">无</text>
+            <text class="detaila">无</text>
+            <text class="detaila">无</text>
+        </view>
+    </view>
+    <view style="position: fixed;bottom: 0;background: #ff9600;width: 100%;height: 3.1rem;">
+        <view style="padding-left: 60rpx;" wx:if="{{flag}}">
+            <van-stepper value="{{ 1 }}" bind:plus="onPlus" bind:minus="onMinus" theme="round" button-size="45rpx" />
+            <text>总计：￥{{FoodList.FoodPrice * num}}</text>
+        </view>
+        <view style="position: absolute;right: 0;top: 0;width: 250rpx;height: 100%;">
+            <button style="background: #f4C903;color: #fff;height: 100%;" bindtap="takingOrder">提交订单</button>
+        </view>
+    </view>
+    <van-notify id="van-notify" />
+    <van-dialog 
+    use-slot 
+    title="订单提交成功" 
+    show="{{ show }}" 
+    bind:close="onClose"
+    >
+    <view style="display: flex;justify-content: center;align-items: center;padding:30rpx 0;flex-direction: column;">
+        <image src="../../image/images/success.png" style="height: 200rpx;width: 200rpx;"></image>
+        <view style="margin-top: 10rpx;">
+            <text style="font-size: larger;">你前方还有：</text><text style="color: red;font-size: larger;">{{rank}}人</text>
+        </view>
+    </view>
+    
+    </van-dialog>
+</view>

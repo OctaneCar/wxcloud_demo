@@ -1,0 +1,11 @@
+/* pages/center/center.wxss */
+.centerInfo{
+    height: 70rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.centerText{
+    line-height: 70rpx;
+    text-align: left;
+    padding-left: 40rpx;
+}

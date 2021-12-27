@@ -1,0 +1,53 @@
+<!--pages/order/order.wxml-->
+<van-tabs active="{{ 0 }}" typr="card" color="#f4C903" sticky bind:click="chooseTab">
+    <van-tab title="未支付">
+        <view style="margin-top: 30rpx;">
+            <view wx:for="{{newFoodList}}">
+                <view style="position: relative;">
+                    <view style="display: flex;flex-direction: column;padding-left: 10rpx;">
+                        <text class="textInfo">订单号：</text>
+                        <text class="textInfo">状态：</text>
+                        <text class="textInfo">份量：</text>
+                        <text class="textInfo">食物名称：</text>
+                        <text class="textInfo">食物价格：</text>
+                        <text class="textInfo">提交时间：</text>
+                    </view>
+                    <view style="display: flex;flex-direction: column;position: absolute;top: 0;right: 20rpx;">
+                        <text class="textInfo">{{item._id}}</text>
+                        <text class="textInfo">{{item.status}}</text>
+                        <text class="textInfo">{{item.FoodNum}}</text>
+                        <text class="textInfo">{{item.FoodName}}</text>
+                        <text class="textInfo">￥{{item.FoodPrice}}</text>
+                        <text class="textInfo">{{item.Date}}</text>
+                    </view>
+                </view>
+                <van-divider />
+            </view>
+        </view>
+    </van-tab>
+    <van-tab title="已支付">
+        <view style="margin-top: 30rpx;">
+            <view wx:for="{{FoodList}}">
+                <view style="position: relative;">
+                    <view style="display: flex;flex-direction: column;padding-left: 10rpx;">
+                        <text class="textInfo">订单号：</text>
+                        <text class="textInfo">状态：</text>
+                        <text class="textInfo">份量：</text>
+                        <text class="textInfo">食物名称：</text>
+                        <text class="textInfo">食物价格：</text>
+                        <text class="textInfo">提交时间：</text>
+                    </view>
+                    <view style="display: flex;flex-direction: column;position: absolute;top: 0;right: 20rpx;">
+                        <text class="textInfo">{{item._id}}</text>
+                        <text class="textInfo">{{item.status}}</text>
+                        <text class="textInfo">{{item.FoodNum}}</text>
+                        <text class="textInfo">{{item.FoodName}}</text>
+                        <text class="textInfo">￥{{item.FoodPrice}}</text>
+                        <text class="textInfo">{{item.Date}}</text>
+                    </view>
+                </view>
+                <van-divider />
+            </view>
+        </view>
+    </van-tab>
+</van-tabs>

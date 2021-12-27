@@ -1,0 +1,56 @@
+<!--pages/center/center.wxml-->
+<view>
+    <view style="background: #f4C903;">
+        <view style="display:flex;flex-direction: column;align-items: center;">
+            <image src="{{userInfo.avatarUrl}}" style="width: 280rpx;height: 280rpx;border-radius: 50%;"></image>
+            <text style="padding-top: 10rpx;">{{userInfo.nickName}}</text>
+        </view>
+        <view style="padding:  30rpx ">
+            <van-button type="primary" round size="large" bind:click="login" wx:if="{{!condition}}">登录</van-button>
+            <van-button round size="large" bind:click="loginOut" wx:if="{{condition}}">登出</van-button>
+        </view>
+    </view>
+
+    <view style="padding-top: 50rpx;">
+        <van-divider hairline />
+        <view class="centerInfo" bindtap="goOrder">
+            <text class="centerText">我的订单</text>
+
+            <van-icon name="arrow" />
+
+        </view>
+        <van-divider hairline />
+
+        <view class="centerInfo" bindtap="goBackEnd" wx:if="{{!isShow}}"><text class="centerText">商家登录</text>
+            <van-icon name="arrow" />
+        </view>
+        <van-divider wx:if="{{!isShow}}"/>
+        <view class="centerInfo" wx:if="{{isShow}}" bindtap="allOrders"><text class="centerText">全部订单</text>
+            <van-icon name="arrow" />
+        </view>
+        <van-divider wx:if="{{isShow}}"/>
+        <view class="centerInfo" bindtap="contact"><text class="centerText">联系我</text>
+            <van-icon name="arrow" />
+        </view>
+        <van-divider />
+        <view class="centerInfo" bindtap="about"><text class="centerText">关于</text>
+            <van-icon name="arrow" />
+        </view>
+        <van-divider />
+    </view>
+</view>
+<van-notify id="van-notify" />
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  overlay
+  description='联系我'
+  bind:close="onClose"
+/>
+<van-action-sheet
+  show="{{ Show }}"
+  actions="{{ actionss }}"
+  overlay
+  description='关于'
+  bind:close="onClose"
+/>

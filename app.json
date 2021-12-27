@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/center/center",
+    "pages/detail/detail",
+    "pages/bussiness/bussiness",
+    "pages/order/order",
+    "pages/orderforadmin/orderforadmin",
+    "pages/food/food",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundColor": "#f0f2f5",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f4C903",
+    "navigationBarTitleText": "点餐小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#Fc0",
+    "selectedColor": "#f4C903",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/images/selecthome.png",
+        "iconPath": "image/images/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/images/selectmy.png",
+        "iconPath": "image/images/my.png",
+        "pagePath": "pages/center/center",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {"van-toast": "@vant/weapp/toast/index"}
+  
+}

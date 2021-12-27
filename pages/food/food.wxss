@@ -1,0 +1,33 @@
+/* pages/food/food.wxss */
+.Main{
+    background: #f0f2f5;
+    min-height: 100vh;
+  }
+  .FoodList-Main{
+    display: flex;
+    position: relative;
+    height: 200rpx;
+    margin: 20rpx 40rpx 40rpx;
+    border-radius: 40rpx;
+    background: #fff;
+  }
+  .FoodList-FoodImg image{
+    width: 180rpx;
+    height: 190rpx;
+    margin-right: 20rpx;
+    position: absolute;
+    left: 40rpx;
+    top: 10rpx;
+  }
+  .FoodList-FoodText{
+    position: absolute;
+    left: 250rpx;
+  }
+  .FoodList-Footer{
+    position: absolute;
+    left: 250rpx;
+    bottom: 0;
+  }
+  .title-class{
+    font-size: larger;
+  }
